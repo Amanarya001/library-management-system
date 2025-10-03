@@ -1,0 +1,346 @@
+/* style.css */
+
+/* Navbar Flex Layout */
+.navbar {
+    background: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* Left menu items */
+.logo_img {
+    
+    width: 50px;           /* set desired width */
+    height: 50px;           /* set desired height */
+    object-fit: contain;    /* fits image without cropping or stretching */
+    vertical-align: middle; /* aligns image with the text links */
+    margin-right: 15px;     /* space between logo and links */
+    border-radius: 5px;     /* optional: rounded corners */
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-left a:hover {
+    color: #f39c12;
+}
+
+/* Right menu items as log-out  buttons */
+.nav-right {
+    margin-left: 15px;
+    width: 50px;       /* desired width */
+    height: 40px;      /* desired height */
+}
+
+.nav-right a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;   /* anchor images inside */
+    border-radius: 5px;
+    overflow: hidden;     /* crop if image bigger */
+}
+
+.nav-right img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;         /* fill container */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-log-out2 {
+    opacity: 0; /* hidden by default */
+}
+
+.nav-right a:hover .hover-log-out2 {
+    opacity: 1;
+}
+
+.nav-right a:hover .main-log-out {
+    opacity: 0;
+}
+
+
+
+/* General container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container h1 {
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* General container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container h1 {
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.container h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.container_table {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* Add new book button */
+.btn {
+   display: block;           /* make it a block element */
+    width: 200px;             /* fixed width */
+    margin: 20px auto;        /* auto left/right = center */
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #219150;
+}
+/* Topbar */
+.topbar {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.topbar-left span {
+    font-weight: bold;
+}
+
+.topbar-right .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.topbar-right .dropbtn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+.topbar-right .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.topbar-right .dropdown-content a {
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.topbar-right .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.topbar-right .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+/* Section Header */
+
+.carousel-section{
+    background-color: #effcf4;
+    margin-top: 0px;
+}
+
+.carousel-section-header {
+  margin: 30px 0 15px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.carousel-section-header h2 a {
+  text-decoration: none;
+  color: #2c3e50;
+  background-color: #d0d5d3;  
+ 
+  
+}
+
+.carousel-section-header h2 a:hover {
+  color: #2980b9;
+}
+
+/* Book Carousel/Grid */
+.carousel-container {
+  
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;   /* makes it scrollable horizontally */
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Book Card */
+.book-card {
+  min-width: 150px;
+  text-align: center;
+}
+
+.book-card img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.book-card img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    max-height: 300;
+    margin: auto;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    min-width: 220px;
+    margin: 10px;
+}
+
+.footer h3, .footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 20px 0;
+        text-align: center;
+    }
+}

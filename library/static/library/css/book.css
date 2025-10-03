@@ -1,0 +1,262 @@
+/* style.css */
+
+/* Navbar Flex Layout */
+.navbar {
+    background: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    flex-wrap: wrap; /* allow items to wrap on small screens */
+}
+
+/* Left menu items */
+.logo_img {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-left a:hover {
+    color: #f39c12;
+}
+
+/* Right menu items as buttons */
+.nav-right a {
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 6px 12px;
+    background: #27ae60;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.nav-right a:hover {
+    background: #e67e22;
+}
+
+/* General container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 0 15px; /* padding for small screens */
+}
+
+.container h1 {
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Screen image section */
+.screen {
+    background: #27ae60;
+    width: 100%;        /* full width */
+    max-width: 1685px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+.logo_home {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* =================== */
+/* MEDIA QUERIES */
+/* =================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .nav-left a {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .nav-right a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    .screen {
+        height: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-left, .nav-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 8px;
+    }
+    .nav-left a, .nav-right a {
+        margin: 5px;
+        font-size: 14px;
+    }
+    .logo_img {
+        width: 140px;
+    }
+    .screen {
+        height: 250px;
+    }
+    .container h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* Right menu items as log-out  buttons */
+.nav-right {
+    margin-left: 15px;
+    width: 50px;       /* desired width */
+    height: 40px;      /* desired height */
+}
+
+.nav-right a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;   /* anchor images inside */
+    border-radius: 5px;
+    overflow: hidden;     /* crop if image bigger */
+}
+
+.nav-right img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;         /* fill container */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-log-out2 {
+    opacity: 0; /* hidden by default */
+}
+
+.nav-right a:hover .hover-log-out2 {
+    opacity: 1;
+}
+
+.nav-right a:hover .main-log-out {
+    opacity: 0;
+}
+
+/* General container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container h1 {
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* Container for the Add Book form */
+.up_container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* Heading */
+.up_container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Form labels */
+.up_container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Text inputs and select */
+.up_container input[type="text"],
+.up_container input[type="date"],
+.up_container select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.up_container input[type="text"]:focus,
+.up_container input[type="date"]:focus,
+.up_container select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit button */
+.up_container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.up_container button:hover {
+    background-color: #e67e22; /* orange on hover */
+    transform: scale(1.02);
+}

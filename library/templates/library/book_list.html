@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Book list</title>
+    <link rel="stylesheet" href="{% static 'library/css/book_list.css' %}">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left links -->
+        <div class="nav-left">
+            <a href="{% url 'homepage2' %}">
+                <img src="{% static 'library/images/lib_logo.png' %}" alt="Library Logo" class="logo_img">
+            </a>
+            <a href="{% url 'about_us' %}">ℹ️ About Us</a>
+            <a href="{% url 'contact_us' %}">📞 Contact Us</a>
+            <a href="{% url 'book_list' %}">📚 My Books</a>
+            
+        </div>
+
+        <!-- Right links -->
+         <!-- Right links -->
+    <div class="topbar-right">
+        <div class="dropdown">
+            <button class="dropbtn">⚙️ Account ▼</button>
+            <div class="dropdown-content">
+                <a href=" {% url 'edit_profile' %}">Edit Profile</a>
+                <a href="{% url 'change_password' %} ">Change Password</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+    </div> 
+    
+    <div class="container">
+    <h2>All Books</h2>
+    </div>
+
+    <div class="container_table">
+    <table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>published_date</th>
+        <th>links</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.category }}</td>
+        <td>{{ published_date}}</td>
+        <td>{{ links}}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No books added yet.</td>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Library 📚</h3>
+            <p>Providing access to knowledge and learning resources for everyone.</p>
+        </div>
+        <div class="footer-center">
+            <h4>Contact Us</h4>
+            <p>123 Library Street, City, Country</p>
+            <p>Email: info@library.com</p>
+            <p>Phone: +91 123 456 7890</p>
+        </div>
+        <div class="footer-right">
+            <h4>Quick Links</h4>
+            <p><a href="{% url 'homepage' %}">Home</a></p>
+            <p><a href="{% url 'about_us' %}">About Us</a></p>
+            <p><a href="{% url 'login' %}">Login</a></p>
+            <p><a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Library. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
+

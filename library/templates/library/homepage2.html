@@ -1,0 +1,370 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <title>Library Home</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/book_list.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left links -->
+        <div class="nav-left">
+            <a href="{% url 'homepage2' %}">
+                <img src="{% static 'library/images/lib_logo.png' %}" alt="Library Logo" class="logo_img">
+            </a>
+            <a href="{% url 'about_us' %}">ℹ️ About Us</a>
+            <a href="{% url 'contact_us' %}">📞 Contact Us</a>
+            <a href="{% url 'book_list' %}">📚 My Books</a>
+            
+        </div>
+
+     <!-- Right links -->
+    <div class="topbar-right">
+        <div class="dropdown">
+            <button class="dropbtn">⚙️ Account ▼</button>
+            <div class="dropdown-content">
+                <a href=" {% url 'edit_profile' %}">Edit Profile</a>
+                <a href="{% url 'change_password' %} ">Change Password</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- Recently Returned Section -->
+<div class="carousel-section">
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+
+
+<!-- Recently Returned Section -->
+
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+
+<!-- Recently Returned Section -->
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+
+<!-- Recently Returned Section -->
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+
+<!-- Recently Returned Section -->
+
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+
+<!-- Recently Returned Section -->
+
+  <div class="carousel-section-header">
+    <h2 class="home-h2">
+      <a href="#">Trending Books</a>
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <div class="book-card">
+      <img src="{% static 'library/images/book1.jpeg' %}" alt="Book1">
+      <p>Modern Spaces</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book2.jpeg' %}" alt="Book2">
+      <p>The Rebirth of You</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book3.jpeg' %}" alt="Book3">
+      <p>Memory</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>The way of the nameless</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book5.jpeg' %}" alt="Book4">
+      <p>Planting the seed of hope</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 6</p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 7 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title8 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 9 </p>
+    </div>
+    <div class="book-card">
+      <img src="{% static 'library/images/book4.jpeg' %}" alt="Book4">
+      <p>Book Title 1o</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Library 📚</h3>
+            <p>Providing access to knowledge and learning resources for everyone.</p>
+        </div>
+        <div class="footer-center">
+            <h4>Contact Us</h4>
+            <p>123 Library Street, City, Country</p>
+            <p>Email: info@library.com</p>
+            <p>Phone: +91 123 456 7890</p>
+        </div>
+        <div class="footer-right">
+            <h4>Quick Links</h4>
+            <p><a href="{% url 'homepage' %}">Home</a></p>
+            <p><a href="{% url 'about_us' %}">About Us</a></p>
+            <p><a href="{% url 'login' %}">Login</a></p>
+            <p><a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Library. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

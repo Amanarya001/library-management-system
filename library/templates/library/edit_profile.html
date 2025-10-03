@@ -1,0 +1,81 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'library/css/edit_profile.css' %}">
+</head>
+<body>
+<main class="profile-page">
+  <section class="card">
+    <h1 class="card__title">Edit Profile</h1>
+
+    <form class="profile-form" id="profileForm" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="avatar-section">
+       <div class="avatar-preview" id="avatarPreview">
+       <img id="avatarImg" 
+         src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'library/images/default-avatar.png' %}{% endif %}" 
+         alt="Avatar">
+      </div>
+
+     <!-- Hidden file input with styled button -->
+        <label for="avatarInput" class="btn btn--outline" style="cursor: pointer;">
+        Change avatar
+      </label>
+       <input type="file" id="avatarInput" name="avatar" accept="image/*" style="display: none;">
+      </div>   
+ 
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="username">Full name</label>
+          <input id="username" name="username" type="text" placeholder="Your username" value="{{ user.username }}" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" value="{{ user.email }}" required>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+91 99999 99999" value="{{ user.phone }}">
+        </div>
+
+        <div class="form-row">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="City, Country" value="{{ user.location }}">
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" rows="4" placeholder="Short bio about yourself">{{ user.bio }}</textarea>
+        </div>
+        
+        <p class="error-msg">{{ msg_data }}</p>
+
+        <div class="form-actions form-row--full">
+           <button type="submit" class="btn">Save changes</button>
+          <a href="{% url 'homepage2' %}" class="btn btn--ghost">Back</a>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+<script>
+  const avatarInput = document.getElementById('avatarInput');
+  const avatarImg = document.getElementById('avatarImg');
+
+  avatarInput.addEventListener('change', () => {
+    const file = avatarInput.files && avatarInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => avatarImg.src = e.target.result;
+    reader.readAsDataURL(file);
+  });
+</script>

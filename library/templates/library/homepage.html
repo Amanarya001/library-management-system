@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Home</title>
+    <link rel="stylesheet" href="{% static 'library/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'library/css/login.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="nav-left">
+        <a href="{% url 'homepage' %}">
+           <img src="{% static 'library/images/lib_logo.png' %}" alt="Library Logo" class="logo_img">
+        </a>
+        <a href="javascript:void(0)" class="openLogin">ℹ️ About Us</a>
+        <a href="javascript:void(0)" class="openLogin">📞 Contact Us</a>
+        <a href="javascript:void(0)" class="openLogin">📚 My Books</a>
+    </div>
+    <div class="nav-right">
+        <a href="javascript:void(0)" class="openLogin">🔑 Log-in</a> 
+    </div>
+</div>
+
+<!-- Main content -->
+ 
+<div class="container">
+     <h1>Welcome to the Library 📖</h1>
+</div>
+
+<div class="screen">
+    <img src="{% static 'library/images/lib_home.jpg' %}" alt="Library Logo" class="logo_home">
+</div>
+
+<br><br><br><br><br>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Library 📚</h3>
+            <p>Providing access to knowledge and learning resources for everyone.</p>
+        </div>
+        <div class="footer-center">
+            <h4>Contact Us</h4>
+            <p>123 Library Street, City, Country</p>
+            <p>Email: info@library.com</p>
+            <p>Phone: +91 123 456 7890</p>
+        </div>
+        <div class="footer-right">
+            <h4>Quick Links</h4>
+            <p><a href="{% url 'homepage' %}">Home</a></p>
+            <p><a href="{% url 'about_us' %}">About Us</a></p>
+            <p><a href="{% url 'login' %}">Login</a></p>
+            <p><a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Library. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- Floating login modal -->
+{% include 'library/login.html' %}
+
+<!-- JS -->
+<script>
+const modal = document.getElementById('loginModal');
+const closeBtn = document.getElementById('closeLogin');
+
+// Select all links that open the modal
+const openBtns = document.querySelectorAll('.openLogin');
+openBtns.forEach(btn => btn.onclick = () => modal.style.display = 'flex');
+
+// Close button
+closeBtn.onclick = () => modal.style.display = 'none';
+
+// Click outside modal.....................................................................
+window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'library/css/login.css' %}">
+</head>
+<body>
+
+
+<!-- Floating window / modal -->
+<!-- floating_login.html -->
+
+<div id="loginModal" class="modal" {% if msg_data %}style="display: flex;"{% endif %}>
+
+  <div class="modal-content">
+    <span id="closeLogin" class="close-btn">&times;</span>
+    <h2>Login</h2>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Enter Username" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+      <p class="error-msg">{{ msg_data }}</p>
+    </form>
+    <div class="extra-links">
+      <p><a href="{% url 'forgot_pass' %}">Forgot password?</a></p>
+      <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+  </div>
+</div>
+<script>
+  
+</script>
+
+</body>
+</html>
